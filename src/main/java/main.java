@@ -1,3 +1,7 @@
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+
 public class main {
     public static void main(String[] args){
         DatabaseHelper dataBase = new DatabaseHelper();
@@ -29,5 +33,24 @@ public class main {
 
         //Owners owners = new Owners("Alex",23);
         //service.updateOwner(owners);
+        CLServlet CLservlet = new CLServlet();
+        HistServlet histServlet = new HistServlet();
+
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.addServlet(new ServletHolder(CLservlet), "/chcklist");
+        context.addServlet(new ServletHolder(histServlet), "/hist");
+
+        Server server = new Server(8080);
+        server.setHandler(context);
+
+        try {
+            server.start();
+            server.join();
+        }
+        catch (Exception ex){
+            System.out.println("Непредвиденное завершение работы");
+            ex.printStackTrace();
+        }
+
     }
 }

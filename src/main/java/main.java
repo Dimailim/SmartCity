@@ -5,7 +5,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 public class main {
     public static void main(String[] args){
         DatabaseHelper dataBase = new DatabaseHelper();
-        System.out.println(dataBase.insertUser("IIvanov","gjhak321","Расчетный лист за февраль","/chcklst.pdf"));
+       // System.out.println(dataBase.insertUser("IIvanov","gjhak321","Расчетный лист за февраль","/chcklst.pdf"));
         System.out.println(dataBase.checkUser("IIvanov"));
         //CheckingListService service = new CheckingListService();
         //CheckingList checkingList = service.getCheckingList("IIvanov");

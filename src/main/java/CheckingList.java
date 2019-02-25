@@ -3,18 +3,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "[EmployeeProfile]CheckingList")
+@Table(name = "checkinglist")
 public class CheckingList {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private  int id;
     @Column(name="user")
     private String user;
-    @Column(name="Password")
+    @Column(name="password")
     private  String password;
-    @Column(name="Comment")
+    @Column(name="comment")
     private String  comment;
     @Column (name = "checkinglist")
     private  String checkinglist;
-    @OneToMany(mappedBy = "[EmployeeProfile]CheckingList",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "checkinglist",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<History> historyList;
     public CheckingList(){
 
@@ -59,6 +61,11 @@ public class CheckingList {
     public String getCheckinglist(){
         return checkinglist;
     }
-
+    public void setId(){
+        this.id = id;
+    }
+    public  int getId(){
+        return id;
+    }
 
 }

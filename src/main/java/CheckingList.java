@@ -7,16 +7,16 @@ import java.util.List;
 public class CheckingList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
-    @Column(name="user")
+    private  long id;
+    @Column(name="username")
     private String user;
     @Column(name="password")
     private  String password;
     @Column(name="comment")
     private String  comment;
-    @Column (name = "checkinglist")
-    private  String checkinglist;
-    @OneToMany(mappedBy = "checkinglist",cascade = CascadeType.ALL,orphanRemoval = true)
+    @Column (name = "checkinglistfile")
+    private  String checkinglistfile;
+    @OneToMany(mappedBy = "checkingList",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<History> historyList;
     public CheckingList(){
 
@@ -25,7 +25,7 @@ public class CheckingList {
         this.user = user;
         this.password = password;
         this.comment = comment;
-        this.checkinglist = checkinglist;
+        this.checkinglistfile = checkinglist;
         historyList = new ArrayList<History>();
     }
 
@@ -43,8 +43,8 @@ public class CheckingList {
     public void setPassword(String password){
         this.password = password;
     }
-    public void setCheckinglist(String checkinglist){
-        this.checkinglist = checkinglist;
+    public void setCheckinglistfile(String checkinglist){
+        this.checkinglistfile = checkinglist;
     }
     public  void setComment (String comment){
         this.comment = comment;
@@ -58,13 +58,13 @@ public class CheckingList {
     public  String getComment(){
         return comment;
     }
-    public String getCheckinglist(){
-        return checkinglist;
+    public String getCheckinglistfile(){
+        return checkinglistfile;
     }
     public void setId(){
         this.id = id;
     }
-    public  int getId(){
+    public  long getId(){
         return id;
     }
 

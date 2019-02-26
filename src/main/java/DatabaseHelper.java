@@ -61,7 +61,7 @@ public class DatabaseHelper {
                 checkingList.setUser(user);
                 checkingList.setPassword(password);
                 checkingList.setComment(comments);
-                checkingList.setCheckinglist(CL);
+                checkingList.setCheckinglistfile(CL);
                 session.save(checkingList); // сохранение и коммит  важно!
                 transaction.commit();
 

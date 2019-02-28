@@ -40,7 +40,7 @@ public class DatabaseHelper {
                 // заменить
                 //return "success";
                 CheckingList checkingList = (CheckingList) users.iterator().next();
-                return  "CheckingListPassword: "+checkingList.getPassword();
+                return checkingList.getPassword();
             }catch (HibernateException ex){
                 ex.printStackTrace();
             }finally{

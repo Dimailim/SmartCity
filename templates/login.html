@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<title> Авторизация </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+<!-- Textfield with Floating Label -->
+<h3 align = "center">Войти</h3>
+<center>
+<form method = "POST" action = "http://localhost:8080/login">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" name = "name" id="username">
+    <label class="mdl-textfield__label" for="username">Логин</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="password" name = "pass" id="password">
+    <label class="mdl-textfield__label" for="password">Пароль</label>
+  </div>
+  <br>
+  <input type = "submit" value = "Войти" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" />
+  
+</form>
+</center>
+<!--<form method = "POST" action = "http://localhost:8080/test">
+<p> Логин </p>
+<input type = "text" name = "userame" />
+<p> Пароль </p>
+<input type = "text" name = "password" />
+<br>
+<input type = "submit" value = "Отправить" />
+</form> -->
+<!--<p>${message} </p> -->
+</body>
+</html>
